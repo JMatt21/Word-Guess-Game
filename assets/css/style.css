@@ -1,0 +1,62 @@
+body {
+    background: #4392a9;
+    min-width: 535px;
+}
+
+p {
+    font-family: 'Acme', sans-serif;
+    line-height: 25px;
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 90px;
+    line-height: 135px;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Impact', sans-serif;
+    color: white;
+    -webkit-text-stroke: 5px black;
+}
+
+#header {
+    text-align: center;
+    position: relative;
+}
+#logo {
+    width: 548px;
+    position: relative;
+}
+#logo2 {
+    width: 548px;
+}
+#content{
+    margin: 0 auto;
+    border: 5px ridge #393D3F;
+    height: 500px;
+    width: 535px;
+}
+
+#leftside {
+    float: left;
+    background: #28515e;
+    width: 197px;
+    height: 100%;
+    border-right: 3px #393D3F ridge;
+}
+
+#rightside {
+    float: left;
+    border-left: 3px #393D3F;
+    border-style: ridge;
+    background: #28515e;
+    width: 332px;
+    height: 100%;
+    text-align: center;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
