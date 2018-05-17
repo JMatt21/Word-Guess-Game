@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,28 +11,44 @@
     <link href="https://fonts.googleapis.com/css?family=Titan+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 </head>
+
 <body>
-    
+
+    <audio id="myAudio">
+        <source src="assets/audio/heavy_goodjob01.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+
+
+
     <div id="header">
-        <!-- <h2>HANGMAN</h2> -->
-        <img src="assets/images/hangman logo.png" id="logo2">
-        <img src="assets/images/Futurama Logo.png" id="logo">
-        
+        <img src="assets/images/FinalHeader.png" id="logo">
     </div>
-    
+
     <div id="content" class="clearfix">
         <div id="leftside">
-            <img src = "" id="image">
+            <img src="" id="image">
+            <p id="leftText"></p>
         </div>
         <div id="rightside">
             <p>Press any key to get started!</p>
-            <p>Wins <span id="wins"></span></p>
+            <p>Wins
+                <span id="wins"></span>
+            </p>
             <p>Current Word</p>
-            <p><span id="currentWord" style="text-transform: capitalize; letter-spacing: 15px"></span></p>
-            <p>Number of Guesses Remaining <span id="remaining"></span></p>
-            <p>Letters Already Guessed <span id="list"></span></p>
+            <p>
+                <span id="currentWord"></span>
+            </p>
+            <p>Number of Guesses Remaining
+                <span id="remaining"></span>
+            </p>
+            <p>Letters Already Guessed
+                <span id="list"></span>
+            </p>
         </div>
     </div>
 </body>
 <script type="text/javascript" src="assets/javascript/game.js"></script>
+
 </html>

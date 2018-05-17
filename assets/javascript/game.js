@@ -1,9 +1,8 @@
 // Constants
 const maxGuesses = 13;
 const wordList = ["bender bending rodriguez", "fry", "leela", "zoidberg", "amy", "flexo", "slurm", "planet express", "professor farnsworth",
-                  "zap brannigan", "new new york", "mom", "nibbler", "hermes", "kif kroker", "charleston chew", "hypno toad",
-                  "bite my shiny metal ass", "executive delivery boy", "enslaved by a girrafe", "seymour"];
-// const wordList = ["new new new new new york"];
+                  "zap brannigan", "new new york", "mom", "nibbler", "hermes", "kif kroker", "hypno toad",
+                  "bite my shiny metal ass", "enslaved by a girrafe", "seymour"];
 
 // Variables
 var GuessesRemaining = maxGuesses;
@@ -15,6 +14,9 @@ var winsID = document.getElementById("wins");
 var currentWordID = document.getElementById("currentWord");
 var remainingID = document.getElementById("remaining");
 var listID = document.getElementById("list");
+var leftTextID = document.getElementById("leftText");
+var imageID = document.getElementById("image");
+var x = document.getElementById("myAudio");
 
 // Functions
 function generateAnswer() {
@@ -33,7 +35,6 @@ function wordToUnderscore(word) {
     }
     console.log("Current Word: ", ret);
     return ret;
-    
 }
 
 function updateCurrentWord() {
@@ -56,7 +57,13 @@ function revealAnswerLetter(letter) {
     }
     updateCurrentWord();
 }
-
+function updateLeftSide(answer){
+    imageID.setAttribute("src", "assets/images/answerimages/"+ answer +".png");//directory starts where index.html is at
+    imageID.setAttribute("width", 200);
+    imageID.setAttribute("height", 200);
+    imageID.setAttribute("class", "borderBelowImage");
+    leftTextID.textContent = answer;
+}
 // Reseting Functions
 function emptyList() {
     guessList = [];
@@ -80,20 +87,20 @@ function hardReset() {
     resetWord();
 }
 
-
 //Main Function
 document.onkeydown = function () {
     if (event.key >= 'a' && event.key <= 'z') {
-        if (!guessList.includes(event.key)) {
+        if (!guessList.includes(event.key)) {w
 
             if (answer.includes(event.key)) {
-                // addToList(event.key);
                 revealAnswerLetter(event.key);
                 console.log(currentWord.join(""), answer, currentWord.join("") == answer);
 
                 if (currentWord.join("") == answer) {
                     winsID.textContent++;
+                    updateLeftSide(answer);
                     hardReset();
+                    x.play();
                 }
             }
             else {
@@ -111,4 +118,6 @@ remainingID.textContent = maxGuesses;
 answer = generateAnswer();
 currentWord = wordToUnderscore(answer);
 updateCurrentWord();
-console.log(currentWord.join(""), answer, currentWord.join("") == answer);
+console.log(currentWord.join(""), answer, currentWord.join("") == answer); 
+
+
