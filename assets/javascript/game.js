@@ -2,7 +2,7 @@
 const maxGuesses = 13;
 const wordList = ["bender bending rodriguez", "fry", "leela", "zoidberg", "amy", "flexo", "slurm", "planet express", "professor farnsworth",
                   "zap brannigan", "new new york", "mom", "nibbler", "hermes", "kif kroker", "hypno toad",
-                  "bite my shiny metal ass", "enslaved by a girrafe", "seymour"];
+                  "bite my shiny metal ass", "enslaved by a giraffe", "seymour"];
 
 // Variables
 var GuessesRemaining = maxGuesses;
@@ -16,7 +16,7 @@ var remainingID = document.getElementById("remaining");
 var listID = document.getElementById("list");
 var leftTextID = document.getElementById("leftText");
 var imageID = document.getElementById("image");
-var x = document.getElementById("myAudio");
+// var x = document.getElementById("myAudio");
 
 // Functions
 function generateAnswer() {
@@ -33,7 +33,7 @@ function wordToUnderscore(word) {
             ret.push(" ")
         }
     }
-    console.log("Current Word: ", ret);
+    // console.log("Current Word: ", ret);
     return ret;
 }
 
@@ -79,7 +79,7 @@ function resetWord() {
     answer = generateAnswer();
     currentWord = wordToUnderscore(answer);
     updateCurrentWord();
-    console.log(currentWord.join(""), answer, currentWord.join("") == answer);
+    // console.log(currentWord.join(""), answer, currentWord.join("") == answer);
 }
 function hardReset() {
     emptyList();
@@ -90,17 +90,15 @@ function hardReset() {
 //Main Function
 document.onkeydown = function () {
     if (event.key >= 'a' && event.key <= 'z') {
-        if (!guessList.includes(event.key)) {w
-
+        if (!guessList.includes(event.key)) {
             if (answer.includes(event.key)) {
                 revealAnswerLetter(event.key);
-                console.log(currentWord.join(""), answer, currentWord.join("") == answer);
-
+                // console.log(currentWord.join(""), answer, currentWord.join("") == answer);
                 if (currentWord.join("") == answer) {
                     winsID.textContent++;
                     updateLeftSide(answer);
                     hardReset();
-                    x.play();
+                    // x.play();
                 }
             }
             else {
@@ -118,6 +116,6 @@ remainingID.textContent = maxGuesses;
 answer = generateAnswer();
 currentWord = wordToUnderscore(answer);
 updateCurrentWord();
-console.log(currentWord.join(""), answer, currentWord.join("") == answer); 
+// console.log(currentWord.join(""), answer, currentWord.join("") == answer); 
 
 
