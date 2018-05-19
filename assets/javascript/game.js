@@ -16,7 +16,6 @@ var remainingID = document.getElementById("remaining");
 var listID = document.getElementById("list");
 var leftTextID = document.getElementById("leftText");
 var imageID = document.getElementById("image");
-// var x = document.getElementById("myAudio");
 
 // Functions
 function generateAnswer() {
@@ -98,7 +97,6 @@ document.onkeydown = function () {
                     winsID.textContent++;
                     updateLeftSide(answer);
                     hardReset();
-                    // x.play();
                 }
             }
             else {
